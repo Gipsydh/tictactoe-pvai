@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+span {
+  font-family: 'Nunito';
+  font-weight: 1000;
+}
+.or {
+  font-size: 30px;
+  position: absolute;
+  bottom: 17%;
+  color: #a4b5b8;
+}
+body {
+  background-image: url('../../public/resources/background.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+}
+.outerBoard {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 600px;
+  padding: 0px 35px;
+  border: 2px solid #36bed667;
+  box-shadow: 0 0 50px 20px #36bed655;
+  border-radius: 5px;
+  position: relative;
+}
+.outerBoard h1 {
+  position: absolute;
+  top: 30px;
+  font-family: 'Nunito';
+  font-weight: 1000;
+  font-size: 40px;
+  color: #3387d6;
+}
+.board {
+  transition: 0.3s ease-in-out;
+  height: 300px;
+  /* background-color: #e0e0e0; */
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: space-between;
+  position: relative;
+  border: 1px solid rgb(255, 255, 255);
+}
+.board .box {
+  background-color: white;
+  width: calc(100% / 3 - 0px);
+  height: calc(100% / 3 - 0px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.box i {
+  font-size: 50px;
+  animation: boomIn 0.4s 1;
+}
+.fa-circle {
+  color: #36bed6;
+}
+.fa-xmark {
+  color: #3387d6;
+}
+.barH {
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  transform: translateX(-50%);
+}
+.barV {
+  transform: translateY(-50%);
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+@keyframes boomIn {
+  0% {
+    opacity: 0;
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+.output {
+  animation: boomIn 0.5s 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Nunito';
+  font-weight: 1000;
+  font-size: 40px;
+  color: #3387d6;
+  z-index: 110;
+}
+.cover {
+  animation: fadeIn 0.5s 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.919);
+  z-index: 100;
+}
+.resetBtn {
+  position: absolute;
+  bottom: 10%;
+  z-index: 120;
+  padding: 6px;
+  background-color: white;
+  border-radius: 50%;
+  color: white;
+  font-size: 30px;
+  animation: boomIn 0.5s 0.3s 1;
+  border: 2px solid rgb(106, 187, 196);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.resetCurrent {
+  left: 22%;
+}
+.resetAll {
+  right: 22%;
+}
+.resetBtn:hover {
+  box-shadow: 0 0 66px 23px #36bed655;
+}
+.resetBtnInner {
+  background-color: #a4b5b8;
+  padding: 20px;
+  border-radius: 50%;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.choosePlayer {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 50px;
+  bottom: 5%;
+  padding: 20px;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  animation: boomIn 0.3s 1;
+}
+.choosePlayer:hover {
+  box-shadow: 0 0 30px 15px #36bed655;
+  scale: 1.2;
+}
+.choosePlayer i {
+  color: white;
+}
+.playerX {
+  left: 20%;
+  background-color: #3387d6;
+}
+.playerY {
+  background-color: rgb(106, 187, 196);
+  right: 20%;
+}
+.popIn {
+  transition: 0.3s ease-in-out;
+  animation: popInAnime 0.3s 1;
+}
+@keyframes popInAnime {
+  0% {
+    scale: 1;
+    opacity: 1;
+  }
+  40% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+.closedBoard {
+  scale: 0.7;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.openBoard {
+  scale: 1;
+  opacity: 1;
+}
+.chooseMode {
+  padding: 20px;
+  background-color: #3387d6;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 10%;
+  transition: 0.3s ease-in-out;
+  animation: boomIn 0.3s 1;
+}
+.chooseMode:hover {
+  cursor: pointer;
+  box-shadow: 0 0 30px 15px #36bed655;
+}
+.chooseModePlayer {
+  left: 20%;
+}
+.chooseModeAI {
+  right: 20%;
+}
+.chooseMode span {
+  margin: 0 10px;
+}
+.difficulty {
+  /* animation: boomIn 0.3s 1; */
+  position: absolute;
+  bottom: 10%;
+}
+.difficulty .diffBox {
+  margin-top: 5px;
+  border-radius: 20px;
+  display: flex;
+  background-color: #36bed6;
+  overflow: hidden;
+}
+.difficulty span {
+  color: #a4b5b8;
+}
+.diffBox .diffMode {
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.diffBox .diffMode:hover {
+  background-color: #3387d6;
+}
+.diffBox :nth-child(2) {
+  border-right: 3px solid #30a9bf;
+  border-left: 3px solid #30a9bf;
+}
+.diffBox i {
+  margin: 10px 40px;
+  color: white;
+}
+@media all and (max-width: 600px) {
+  .outerBoard {
+    width: 90vw;
+    height: 80vh;
+  }
+  .board {
+    width: 250px;
+    height: 250px;
+  }
+  .chooseModePlayer {
+    left: 15%;
+  }
+  .chooseModeAI {
+    right: 15%;
+  }
+  .resetCurrent {
+    left: 18%;
+  }
+  .resetAll {
+    right: 18%;
+  }
+  .output {
+    font-size: 30px;
+  }
+}
