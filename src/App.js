@@ -6,7 +6,7 @@ function App() {
     <div className='App'>
       
       <div className='outerBoard'>
-        <h1>Tic Tac Toe Rechecked</h1>
+        <h1>Tic Tac Toe Rechecked again</h1>
         <Board></Board>
       </div>
     </div>
