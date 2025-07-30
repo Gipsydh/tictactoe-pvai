@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/your-username/your-node-app.git'
+                git 'https://github.com/Gipsydh/tictactoe-pvai'
             }
         }
 
